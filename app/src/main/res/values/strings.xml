@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">task2.1</string>
+    <string name="main_activity">Подписка</string>
+    <string name="user_name">Имя пользователя</string>
+    <string name="email">Электронная почта</string>
+    <string name="ok_button">OK</string>
+    <string name="clear_button">Очистить</string>
+    <string name="sign">Подписка на рассылку успешно оформлена для пользователя </string>
+    <string name="mail"> на электронный адрес </string>
+</resources>
