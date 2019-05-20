@@ -6,6 +6,7 @@ import android.app.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActionBar;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -24,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private String email;
     private EditText nameInput;
     private EditText emailInput;
-    private String sign;
-    private String mail;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
         okButton.setOnClickListener(okButtonListener);
         clearButton.setOnClickListener(clearButtonListener);
-
-        sign = getString(R.string.sign);
-        mail = getString(R.string.mail);
-
-
-
     }
 
     private final View.OnClickListener okButtonListener = new View.OnClickListener() {
@@ -55,10 +49,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             name = nameInput.getText().toString();
             email = emailInput.getText().toString();
-
-            message.setText(MessageFormat.format("{0}{1}{2}{3}", sign, name, mail, email));
-            // изменил на ресурсы, правда не совсем понимаю зачем делать это в Java коде
-
+            message.setText(String.format(getString(R.string.sign), name, email));
         }
     };
 
